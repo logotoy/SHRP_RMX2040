@@ -1,0 +1,31 @@
+# 1 "vendor/mediatek/proprietary/hardware/fstab/mt6768/fstab.in.mt6768"
+# 1 "<built-in>" 1
+# 1 "<built-in>" 3
+# 350 "<built-in>" 3
+# 1 "<command line>" 1
+# 1 "<built-in>" 2
+# 1 "vendor/mediatek/proprietary/hardware/fstab/mt6768/fstab.in.mt6768" 2
+# 146 "vendor/mediatek/proprietary/hardware/fstab/mt6768/fstab.in.mt6768"
+system /system ext4 ro wait,,avb=vbmeta_system,logical,first_stage_mount,avb_keys=/avb/q-gsi.avbpubkey:/avb/r-gsi.avbpubkey:/avb/s-gsi.avbpubkey
+
+vendor /vendor ext4 ro wait,,avb,logical,first_stage_mount
+
+
+
+
+oppo_product /oppo_product ext4 ro wait,logical,first_stage_mount,nofail
+oppo_engineering /oppo_engineering ext4 ro wait,logical,first_stage_mount,nofail
+common_preload /common_preload ext4 ro wait,logical,first_stage_mount,nofail
+
+
+
+
+
+/dev/block/platform/bootdevice/by-name/md_udc /metadata ext4 noatime,nosuid,nodev,discard wait,formattable,first_stage_mount
+# 171 "vendor/mediatek/proprietary/hardware/fstab/mt6768/fstab.in.mt6768"
+/dev/block/platform/bootdevice/by-name/cache /cache ext4 noatime,nosuid,nodev,noauto_da_alloc,async_discard wait,check,formattable
+
+/dev/block/platform/bootdevice/by-name/userdata /data ext4 noatime,nosuid,nodev,noauto_da_alloc,async_discard,errors=panic wait,check,formattable,quota,reservedsize=128m,resize,checkpoint=block,fileencryption=aes-256-xts
+
+
+
